@@ -1,4 +1,5 @@
 import { existsSync, cpSync, readFileSync, writeFileSync } from "fs";
+import { execSync } from "child_process";
 
 export function bootstrapTemplate(name: string) {
   if (!name) {
@@ -23,4 +24,6 @@ export function bootstrapTemplate(name: string) {
     `${path}/package.json`,
     JSON.stringify(packageJsonConfig, null, 4)
   );
+
+  execSync("npm install", { cwd: path, stdio: "inherit" });
 }
