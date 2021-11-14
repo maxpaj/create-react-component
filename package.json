@@ -1,6 +1,6 @@
 {
   "name": "@maxpaj/create-react-component",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "dependencies": {
     "@types/node": "^16.11.7",
