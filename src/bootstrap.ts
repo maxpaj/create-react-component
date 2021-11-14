@@ -1,4 +1,10 @@
-import { existsSync, cpSync, readFileSync, writeFileSync } from "fs";
+import {
+  existsSync,
+  cpSync,
+  readFileSync,
+  writeFileSync,
+  renameSync,
+} from "fs";
 
 export function bootstrapTemplate(name: string) {
   if (!name) {
@@ -21,6 +27,13 @@ export function bootstrapTemplate(name: string) {
   packageJsonConfig.main = `./lib/cjs/${name}.js`;
   packageJsonConfig.module = `./lib/esm/${name}.js`;
   packageJsonConfig.types = `./lib/esm/${name}.d.ts`;
+
+  // Rename files
+  renameSync(
+    `${path}/src/template-component.test.tsx`,
+    `${path}/src/${name}.test.tsx`
+  );
+  renameSync(`${path}/src/template.tsx`, `${path}/src/${name}.tsx`);
 
   writeFileSync(
     `${path}/package.json`,
