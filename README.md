@@ -1,6 +1,6 @@
 # react-component-dev
 
-Bootstrap a dev-environment for creating a React component built with TypeScript and ready for publishing with npm.
+Bootstrap a dev environment for building a React component with TypeScript, ready for publishing with npm.
 
 ```
 $ npm install -g react-component-dev ts-node
