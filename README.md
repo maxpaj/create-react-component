@@ -9,4 +9,3 @@ npm install -g react-component-dev ts-node
 ## TODO
 
 - Add some dev-server for developing in the browser
-- Add test template

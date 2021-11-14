@@ -1,18 +1,23 @@
 {
   "name": "template-component",
   "version": "0.1.0",
+  "description": "",
+  "author": "",
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "@types/jest": "^26.0.24",
+    "@types/jest": "^27.0.2",
     "@types/node": "^12.20.37",
     "@types/react": "^17.0.34",
     "@types/react-dom": "^17.0.11",
+    "jest-environment-jsdom": "^27.3.1",
     "react": "^17.0.2",
     "react-dev-utils": "^11.0.4",
     "react-dom": "^17.0.2",
     "react-scripts": "^4.0.3",
+    "ts-jest": "^27.0.7",
     "typescript": "^4.4.4",
     "webpack": "^4.44.2"
   },
@@ -20,17 +25,35 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
-  "main": "./lib/cjs/template-component.js",
-  "module": "./lib/esm/template-component.js",
-  "types": "./lib/esm/template-component.d.ts",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts",
   "files": [
-    "/lib"
+    "/lib",
+    "/src"
   ],
+  "jest": {
+    "modulePaths": [
+      "<rootDir>/src/"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/lib/"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "transform": {
+      "^.+\\.(ts|tsx|js|jsx)$": "ts-jest"
+    },
+    "testEnvironment": "jsdom"
+  },
   "scripts": {
     "start": "tsc -w",
-    "build": "build:esm && build:cjs",
+    "build": "npm run build:esm && npm run build:cjs",
     "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir lib/cjs"
+    "build:cjs": "tsc --module commonjs --outDir lib/cjs",
+    "test": "jest"
   },
   "eslintConfig": {
     "extends": [
@@ -49,5 +72,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "license": "ISC"
 }
