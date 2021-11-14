@@ -2,12 +2,12 @@ import { existsSync, cpSync, readFileSync, writeFileSync } from "fs";
 
 export function bootstrapTemplate(name: string) {
   if (!name) {
-    throw new Error("Missing `name` parameter");
+    throw new Error(`Missing ${name} parameter`);
   }
 
   const path = `${process.cwd()}/${name}`;
   if (existsSync(path)) {
-    throw new Error("Directory `name` already exists.");
+    throw new Error(`Directory ${name} already exists.`);
   }
 
   cpSync(`${__dirname}/template`, path, { recursive: true });
