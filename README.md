@@ -1,13 +1,13 @@
-# react-component-dev
+# create-react-component
 
 Bootstrap a dev environment for building a React component with TypeScript, ready for publishing with npm.
 
 ```
-$ npm install -g react-component-dev ts-node
+$ npm install -g @maxpaj/create-react-component ts-node
 ```
 
 ```
-$ react-component-dev my-component
+$ create-react-component my-component
 ```
 
 ## TODO

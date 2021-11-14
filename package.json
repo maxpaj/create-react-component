@@ -1,5 +1,5 @@
 {
-  "name": "react-component-dev",
+  "name": "@maxpaj/create-react-component",
   "version": "1.0.0",
   "description": "",
   "dependencies": {
@@ -7,7 +7,7 @@
     "ts-node": "^10.4.0"
   },
   "bin": {
-    "react-component-dev": "./src/cli.ts"
+    "create-react-component": "./src/cli.ts"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
