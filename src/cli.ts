@@ -1,11 +1,15 @@
 #!/usr/bin/env ts-node
 
-import { bootstrapTemplate } from "./bootstrap";
-import process from "process";
+import { bootstrapComponentTemplate } from "./bootstrap";
+import arg from "arg";
 
 try {
-  const name = process.argv[2];
-  bootstrapTemplate(name);
+  const args = arg({
+    "--github-user": String,
+  });
+
+  const name = args["_"][0];
+  bootstrapComponentTemplate(name, args["--github-user"]);
   console.log(`
   
 Successfully bootstrapped ${name}! Happy coding :)

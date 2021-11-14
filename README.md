@@ -9,7 +9,7 @@ $ npm install -g @maxpaj/create-react-component ts-node
 ```
 
 ```
-$ create-react-component my-component
+$ create-react-component my-component --github-user github-username
 ```
 
 ## TODO
